@@ -1,3 +1,6 @@
-FROM rbekker87/build-tools
-RUN apk add python2 py2-pip --no-cache
+FROM alpine:edge
+
+RUN apk add --no-cache python2 py2-pip && \
+    rm -rf /var/cache/apk/*
+
 CMD ["/bin/sh"]
